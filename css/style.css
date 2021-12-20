@@ -47,7 +47,6 @@ html{
     transform: translate(-50%, -50%);
     width: 80%;
     height: 80%;
-    background-color: blueviolet;
 }
 
 .box-right, .box-left{
@@ -56,7 +55,7 @@ html{
 
 .box-left{
     width: 30%;
-    background-color: chocolate;
+    background-color: #ededed;
 }
 
 .box-right{
@@ -64,4 +63,8 @@ html{
     background-image: url(../img/mine.jpg);
     background-repeat: repeat;
     background-size: contain;
+}
+
+.box-cronology ul{
+    list-style: none;
 }
