@@ -72,10 +72,9 @@
                 </div>
                 <div class="box-main">
                     <ul>
-                        <li v-for="(message, index) in contacts[counter]" class="message">
-                            <div class="txt">
-                                <h5>{{message.text}}</h5>
-                            </div>
+                        <li v-for="(message, index) in contacts[counter].messages" class="message" :class="(message.status == 'sent') ? 'sent' : 'received'">
+                            <span class="text">{{message.text}}</span>
+                            <span class="date">{{message.date}}</span>
                         </li>
                     </ul>
                 </div>
