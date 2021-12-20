@@ -77,7 +77,23 @@ html{
     padding: 15px;
     background-color: #ededed;
     display: flex;
+    justify-content: space-between;
+    flex-wrap: nowrap;
+}
+
+.user, .user-nav{
+    display: flex;
     align-items: center;
+}
+
+.user-nav{
+    justify-content: space-between;
+    gap: 10px;
+}
+
+.user-nav i{
+    color: rgb(97, 97, 97);
+    font-size: 1.2em;
 }
 
 .box-top img, .avatar img{
