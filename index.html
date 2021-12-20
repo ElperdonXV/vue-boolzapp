@@ -61,8 +61,13 @@
             <div class="box-right float">
             <div class="box-top">
                 <div class="user">
-                    <img src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
+                    <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
                     <h2>{{ contacts[counter].name }}</h2>
+                </div>
+                <div class="user-nav">
+                    <i class="fas fa-search"></i>
+                    <i class="fas fa-paperclip"></i>
+                    <i class="fas fa-ellipsis-v"></i>
                 </div>
                 <div class="box-main"></div>
                 <div class="box-write"></div>

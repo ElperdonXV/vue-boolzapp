@@ -199,3 +199,7 @@ html{
     display: inline-block;
     margin-left: 12px;
 }
+
+.box-right .box-top .user{
+    width: 90%;
+}
