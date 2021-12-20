@@ -119,7 +119,7 @@ html{
 
 .alert-off{
     height: 60px;
-    width: 60px;
+    min-width: 60px;
     border-radius: 50%;
     background-color: #F2FBFF;
     display: flex;
@@ -138,4 +138,8 @@ html{
 
 .alert-text h3{
     font-size: 1.2em;
+}
+
+.alert-text a{
+    color: rgb(97, 97, 97);
 }
