@@ -107,3 +107,35 @@ html{
     margin-left: 12px;
     font-size: 1.2em;
 }
+
+.box-alert{
+    min-height: 100px;
+    width: 100%;
+    padding: 15px;
+    background-color: #8EDAFC;
+    display: flex;
+    align-items: center;
+}
+
+.alert-off{
+    height: 60px;
+    width: 60px;
+    border-radius: 50%;
+    background-color: #F2FBFF;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.alert-off i{
+    color: #8EDAFC;
+    font-size: 1.5em;
+}
+
+.alert-text{
+    margin-left: 12px;
+}
+
+.alert-text h3{
+    font-size: 1.2em;
+}
