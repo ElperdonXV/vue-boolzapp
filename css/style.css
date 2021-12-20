@@ -48,6 +48,7 @@ html{
     transform: translate(-50%, -50%);
     width: 80%;
     height: 80%;
+    overflow: hidden;
 }
 
 .box-right, .box-left{
@@ -167,4 +168,12 @@ html{
     top: 35%;
     left: 8%;
     color: rgb(97, 97, 97);
+}
+
+.box-cronology{
+    width: 100%;
+    height: calc(100% - 60px - 100px - 80px);
+    background-color: white;
+    padding: 15px;
+    overflow-y: auto;
 }
