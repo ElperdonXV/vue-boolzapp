@@ -47,7 +47,7 @@
                 </div>
                 <div class="box-cronology">
                     <ul>
-                        <li v-for="(contact, index) in contacts" class="contact">
+                        <li @click="clickChat(index)" v-for="(contact, index) in contacts" class="contact" :class="(counter == index) ? 'selected' : ''">
                             <div class="avatar">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             </div>
@@ -59,7 +59,11 @@
                 </div>
             </div>
             <div class="box-right float">
-                <div class="box-top"></div>
+            <div class="box-top">
+                <div class="user">
+                    <img src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
+                    <h2>{{ contacts[counter].name }}</h2>
+                </div>
                 <div class="box-main"></div>
                 <div class="box-write"></div>
             </div>

@@ -186,6 +186,11 @@ html{
     align-items: center;
     border-bottom: 1px solid #cccccc;
     padding: 15px;
+    cursor: pointer;
+}
+
+.selected{
+    background-color: #cccccc;
 }
 
 .name-text {
