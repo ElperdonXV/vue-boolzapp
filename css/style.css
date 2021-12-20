@@ -143,3 +143,28 @@ html{
 .alert-text a{
     color: rgb(97, 97, 97);
 }
+
+.box-search{
+    height: 60px;
+    width: 100%;
+    background-color: #f6f6f6;
+    display: flex;
+    align-items: center;
+    padding: 15px;
+    position: relative;
+}
+
+.box-search input{
+    height: 35px;
+    border: none;
+    border-radius: 20px;
+    width: 100%;
+    text-align: center;
+}
+
+.box-search i{
+    position: absolute;
+    top: 35%;
+    left: 8%;
+    color: rgb(97, 97, 97);
+}
