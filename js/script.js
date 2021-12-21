@@ -133,24 +133,54 @@ const app = new Vue(
                 for(let x=0; x < length; x++){
                     arrayTxt.push(newArray[x].text);
                 }
-                console.log(arrayTxt);
-                console.log(arrayTxt.length); //ok
+                //console.log(arrayTxt);
+                //console.log(arrayTxt.length); //ok
                 let finalTxt = '';
                 finalTxt = arrayTxt[arrayTxt.length -1];
-                console.log(finalTxt);
-                //console.log(testi);
-                //let finalTxt = '';
-                //let txt = [];
-                //let list = contact.messages;
-                //for(let i=0; i< list.lenght; i++){
-                 //   txt.push(list[i].text);
-                //}
-                //finalTxt = txt[txt.lenght -1];
-                //console.log(txt);
+                //console.log(finalTxt);
                 if (finalTxt.length > 20) {
                     finalTxt = finalTxt.substring(0, 19) + "...";
                 }
                 return finalTxt;
+            },
+            lastMsgDate: function(contact){
+                let newArray = {};
+                newArray = contact.messages;
+                let length = 0;
+                for (date in newArray) {
+                    if (newArray.hasOwnProperty(date)) {
+                        length++;
+                    }
+                }
+                let arrayDate = [];
+                //console.log(length);
+                for (let x = 0; x < length; x++) {
+                    arrayDate.push(newArray[x].date);
+                }
+                //console.log(arrayTxt);
+                //console.log(arrayTxt.length); //ok
+                let finalDate = '';
+                finalDate = arrayDate[arrayDate.length - 1];
+                return finalDate; 
+            }, 
+            lastAccess: function(counter){
+                let newArray = {};
+                newArray = this.contacts[counter].messages;
+                let length = 0;
+                for (date in newArray) {
+                    if (newArray.hasOwnProperty(date)) {
+                        length++;
+                    } 
+                }
+                let arrayAccess = [];
+                for (let x = 0; x < length; x++) {
+                    if(newArray[x].status == 'received'){
+                        arrayAccess.push(newArray[x].date);
+                    }
+                }
+                let lastAcc = '';
+                lastAcc = " "  + arrayAccess[arrayAccess.length - 1];
+                return lastAcc;
             }
         }
     }

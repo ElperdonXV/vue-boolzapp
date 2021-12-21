@@ -56,7 +56,7 @@
                                 <span>{{ lastMsg(contact) }}</span>
                             </div>
                             <div class="date">
-                                <span>{{}}</span>
+                                <span class="datestyle">{{ lastMsgDate(contact) }}</span>
                             </div>
                         </li>
                     </ul>
@@ -66,7 +66,10 @@
                 <div class="box-top">
                     <div class="user">
                         <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
-                        <h2>{{ contacts[counter].name }}</h2>
+                        <div class="user-text">
+                            <h2>{{ contacts[counter].name }}</h2>
+                            <span>Ultimo accesso{{ lastAccess(counter) }}</span>
+                        </div>
                     </div>
                     <div class="user-nav">
                         <i class="fas fa-search"></i>

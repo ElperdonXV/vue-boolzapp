@@ -275,3 +275,11 @@ i{
     justify-self: flex-end;
     margin-bottom: 5px;
 }
+
+.datestyle{
+    font-size: 0.8em;
+    color: grey;
+    align-self: flex-end;
+    justify-self: flex-end;
+    margin-bottom: 5px;
+}
