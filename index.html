@@ -80,7 +80,7 @@
                 </div>
                 <div class="box-write">
                     <i class="far fa-smile"></i>
-                    <input type="text" placeholder="Scrivi un messaggio">
+                    <input @keyup.enter="addMsg(counter)" v-model="newMsg"  type="text" placeholder="Scrivi un messaggio">
                     <i class="fas fa-microphone"></i>
                 </div>
             </div>

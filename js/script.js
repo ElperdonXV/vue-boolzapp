@@ -11,6 +11,7 @@ const app = new Vue(
         el: '#app',
         data: {
             counter: 0,
+            newMsg: '',
             contacts: [
                 {
                     name: "Michele",
@@ -101,6 +102,20 @@ const app = new Vue(
         methods: {
             clickChat: function (index) {
                 this.counter = index;
+            },
+            addMsg: function (counter){
+                if (this.newMsg.lenght != 0) {
+                    const current = new Date();
+                    const data = current.getDate() + '/' + (current.getMonth() + 1) + '/' + current.getFullYear();
+                    const time = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+                    const dateTime = data + ' ' + time;
+                    let obj = {
+                        date: dateTime, 
+                        text: this.newMsg,
+                        status: "sent",
+                    }
+                    this.contacts[counter].messages.push(obj);
+                }
             },
         }
     }
