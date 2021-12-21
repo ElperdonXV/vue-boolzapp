@@ -12,6 +12,7 @@ const app = new Vue(
         data: {
             counter: 0,
             newMsg: '',
+            lastTxt: '',
             contacts: [
                 {
                     name: "Michele",
@@ -117,6 +118,40 @@ const app = new Vue(
                     this.contacts[counter].messages.push(obj);
                 }
             },
+            lastMsg: function(contact) {
+                //console.log(contact.messages);
+                let newArray = {};
+                newArray = contact.messages;
+                let length = 0;
+                for (text in newArray) {
+                    if (newArray.hasOwnProperty(text)) {
+                        length++;
+                    }
+                }
+                let arrayTxt = [];
+                //console.log(length);
+                for(let x=0; x < length; x++){
+                    arrayTxt.push(newArray[x].text);
+                }
+                console.log(arrayTxt);
+                console.log(arrayTxt.length); //ok
+                let finalTxt = '';
+                finalTxt = arrayTxt[arrayTxt.length -1];
+                console.log(finalTxt);
+                //console.log(testi);
+                //let finalTxt = '';
+                //let txt = [];
+                //let list = contact.messages;
+                //for(let i=0; i< list.lenght; i++){
+                 //   txt.push(list[i].text);
+                //}
+                //finalTxt = txt[txt.lenght -1];
+                //console.log(txt);
+                if (finalTxt.length > 20) {
+                    finalTxt = finalTxt.substring(0, 19) + "...";
+                }
+                return finalTxt;
+            }
         }
     }
 );
