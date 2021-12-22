@@ -78,8 +78,9 @@ html{
     padding: 15px;
     background-color: #ededed;
     display: flex;
-    justify-content: space-between;
+    justify-content: space-around;
     flex-wrap: nowrap;
+    align-items: center;
 }
 
 .user, .user-nav{
@@ -105,7 +106,6 @@ html{
 
 .box-top h2{
     display: inline-block;
-    margin-left: 12px;
     font-size: 1.2em;
 }
 
@@ -177,12 +177,14 @@ html{
     overflow-y: auto;
 }
 
-.box-cronology .avatar{
+.avatar{
     display: inline-block;
+    margin-right: 10px;
 }
 
 .contact {
     display: flex;
+    justify-content: space-around;
     align-items: center;
     border-bottom: 1px solid #cccccc;
     padding: 15px;
@@ -194,14 +196,15 @@ html{
 }
 
 .name-text {
-    align-self: baseline;
-    margin-top: 8px;
-    display: inline-block;
-    margin-left: 12px;
+    flex-grow: 1;
 }
 
-.box-right .box-top .user{
-    width: 90%;
+.name-text h4{
+    font-size: 1em;
+}
+
+.name-text span, .date span{
+    font-size: 0.8em;
 }
 
 .box-right .box-top .user-nav{
@@ -282,4 +285,38 @@ i{
     align-self: flex-end;
     justify-self: flex-end;
     margin-bottom: 5px;
+}
+
+.user-text {
+    flex-grow: 1;
+    display: flex;
+    flex-direction: column;
+}
+
+.user-text h2{
+    font-size: 1em;
+}
+
+.user-text span{
+    font-size: 0.8em;
+}
+
+.box-top .user{
+margin-right: 10px;
+}
+
+.box-left .box-top{
+    justify-content: space-between;
+}
+
+.box-name-user{
+    flex-grow: 1;
+}
+
+input:focus::placeholder {
+  color: transparent;
+}
+
+textarea:focus, input:focus{
+    outline: none;
 }

@@ -106,16 +106,28 @@ const app = new Vue(
             },
             addMsg: function (counter){
                 if (this.newMsg.lenght != 0) {
-                    const current = new Date();
-                    const data = current.getDate() + '/' + (current.getMonth() + 1) + '/' + current.getFullYear();
-                    const time = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
-                    const dateTime = data + ' ' + time;
+                    let current = new Date();
+                    let data = current.getDate() + '/' + (current.getMonth() + 1) + '/' + current.getFullYear();
+                    let time = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+                    let dateTime = data + ' ' + time;
                     let obj = {
                         date: dateTime, 
                         text: this.newMsg,
                         status: "sent",
                     }
                     this.contacts[counter].messages.push(obj);
+                    this.newMsg = "";
+                    setTimeout(() => {
+                        current = new Date();
+                        data = current.getDate() + '/' + (current.getMonth() + 1) + '/' + current.getFullYear();
+                        time = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();
+                        dateTime = data + ' ' + time;
+                        this.contacts[counter].messages.push({
+                            date: dateTime,
+                            text: "Ok",
+                            status: "received",
+                        })
+                    }, 1000);
                 }
             },
             lastMsg: function(contact) {
@@ -181,7 +193,16 @@ const app = new Vue(
                 let lastAcc = '';
                 lastAcc = " "  + arrayAccess[arrayAccess.length - 1];
                 return lastAcc;
-            }
+            },
+            searchContact: function () {
+                this.contacts.forEach((contact) => {
+                    if (contact.name.toLowerCase().includes(this.search.toLowerCase())) {
+                        contact.visible = true;
+                    } else {
+                        contact.visible = false;
+                    }
+                });
+            },
         }
     }
 );

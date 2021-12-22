@@ -24,6 +24,8 @@
                 <div class="box-top">
                     <div class="user">
                         <img src="img/avatar_io.jpg" alt="">
+                    </div>
+                    <div class="box-name-user">
                         <h2>Nome Utente</h2>
                     </div>
                     <div class="user-nav">
@@ -42,12 +44,12 @@
                     </div>
                 </div>
                 <div class="box-search">
-                    <input type="text" placeholder="Cerca o inizia una nuova chat">
+                    <input @keyup="searchContact" v-model="search" type="text" placeholder="Cerca o inizia una nuova chat">
                     <i class="fas fa-search"></i>
                 </div>
                 <div class="box-cronology">
                     <ul>
-                        <li @click="clickChat(index)" v-for="(contact, index) in contacts" class="contact" :class="(counter == index) ? 'selected' : ''">
+                        <li @click="clickChat(index)" v-for="(contact, index) in contacts" class="contact" :class="(counter == index) ? 'selected' : ''" v-if="contact.visible">
                             <div class="avatar">
                                 <img :src="`img/avatar${contact.avatar}.jpg`" alt="">
                             </div>
@@ -66,10 +68,10 @@
                 <div class="box-top">
                     <div class="user">
                         <img :src="`img/avatar${contacts[counter].avatar}.jpg`" alt="">
-                        <div class="user-text">
-                            <h2>{{ contacts[counter].name }}</h2>
-                            <span>Ultimo accesso{{ lastAccess(counter) }}</span>
-                        </div>
+                    </div>
+                    <div class="user-text">
+                        <h2>{{ contacts[counter].name }}</h2>
+                        <span>Ultimo accesso{{ lastAccess(counter) }}</span>
                     </div>
                     <div class="user-nav">
                         <i class="fas fa-search"></i>
