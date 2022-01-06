@@ -105,7 +105,11 @@ const app = new Vue(
                 this.counter = index;
             },
             addMsg: function (counter){
-                if (this.newMsg.lenght != 0) {
+                let whitespace = false;
+                if (this.newMsg.trim().length === 0){
+                    whitespace = true;
+                }
+                if (this.newMsg.length != 0 && whitespace == false) {
                     let current = new Date();
                     let data = current.getDate() + '/' + (current.getMonth() + 1) + '/' + current.getFullYear();
                     let time = current.getHours() + ":" + current.getMinutes() + ":" + current.getSeconds();

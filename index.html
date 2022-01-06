@@ -90,7 +90,7 @@
                 <div class="box-write">
                     <i class="far fa-smile"></i>
                     <input @keyup.enter="addMsg(counter)" v-model="newMsg"  type="text" placeholder="Scrivi un messaggio">
-                    <i class="fas fa-microphone"></i>
+                    <i @click="addMsg(counter)" :class="(newMsg == '') ? 'fas fa-microphone' : 'fas fa-paper-plane'"></i>
                 </div>
             </div>
         </div>
