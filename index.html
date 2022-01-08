@@ -82,7 +82,14 @@
                 <div class="box-main">
                     <ul>
                         <li v-for="(message, index) in contacts[counter].messages" class="message" :class="(message.status == 'sent') ? 'sent' : 'received'">
-                            <span class="text">{{message.text}}</span>
+                            <div class="msg">
+                                <span class="text">{{message.text}}</span>
+                                <i @click="showMenu(index)" class="fas fa-chevron-down info"></i>
+                                <div class="msg-menu" :class="(message.show == false) ? 'none' : 'block'">
+                                    <span>Message info</span>
+                                    <span @click="deleteMsg(index)">Delete message</span>
+                                </div>
+                            </div>
                             <span class="date">{{message.date}}</span>
                         </li>
                     </ul>

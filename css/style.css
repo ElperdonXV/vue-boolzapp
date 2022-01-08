@@ -320,3 +320,45 @@ input:focus::placeholder {
 textarea:focus, input:focus{
     outline: none;
 }
+
+.msg{
+    display: flex;
+    justify-content: space-between;
+    position: relative;
+}
+
+.info{
+    color: rgb(97, 97, 97);
+    display: none;
+}
+
+.msg-menu{
+    position: absolute;
+    top: 18px;
+    right: 5px;
+    padding: 15px;
+    background-color: white;
+    border-radius: 5px;
+    z-index: 99;
+    
+}
+
+.none{
+    display: none;
+}
+
+.block{
+    display: block;
+}
+
+.msg-menu span{
+    margin: 0.8em 0;
+    display: block;
+    font-size: 0.8em;
+    color: rgb(97, 97, 97);
+    cursor: pointer;
+}
+
+.box-main .message:hover .info{
+    display: block;
+}
